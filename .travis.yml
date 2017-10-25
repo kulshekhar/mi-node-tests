@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "8"
-  # - "6"
+  - "6"
 
 before_install:
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
@@ -14,8 +14,8 @@ before_install:
   - mv mi-node/data ./
   - rm mi-node -rf
   - yarn global add greenkeeper-lockfile@1
-  - pwd
-  - ls -al
+  # - pwd
+  # - ls -al
   - cd medapp
 
 before_script:
@@ -26,8 +26,8 @@ before_script:
   - cd ../medapp
 
 script:
-  - pwd
-  - ls -al
+  # - pwd
+  # - ls -al
   # - yarn test
   - yarn test:server
 
