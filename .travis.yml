@@ -12,19 +12,17 @@ before_install:
   - git clone https://github.com/kulshekhar/mi-node
   - mv mi-node/medapp ./
   - rm mi-node -rf
-  # - cp package.json mi-node/
-  # - cp yarn.lock mi-node/
   # - yarn global add greenkeeper-lockfile@1
   - pwd
   - ls -al
-  - cd mi-node
+  - cd medapp
 
 before_script:
   - cp ./package.json ../repo
   - cp ./yarn.lock ../repo
   # - cd ../repo
   # - greenkeeper-lockfile-update
-  # - cd ../mi-node
+  # - cd ../medapp
 
 script:
   - pwd
