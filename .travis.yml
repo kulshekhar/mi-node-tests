@@ -28,7 +28,7 @@ before_script:
 script:
   - pwd
   - ls -al
-  - yarn test
+  # - yarn test
   - yarn test:server
 
 # after_script:
