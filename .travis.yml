@@ -5,26 +5,31 @@ node_js:
 
 before_install:
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
+  - mkdir -p /tmp/repo
+  - rm /tmp/repo/{.,}* -rf
+  - mv ./{.,}* /tmp/repo/
+  - mv /tmp/repo ./
   - git clone https://github.com/kulshekhar/mi-node
-  - cp package.json mi-node/
-  - cp yarn.lock mi-node/
+  - rm mi-node/.git -rf
+  # - cp package.json mi-node/
+  # - cp yarn.lock mi-node/
   # - yarn global add greenkeeper-lockfile@1
   - pwd
-  - ls
+  - ls -al
+  - cd mi-node
 
 before_script:
-  - pwd
-  - cp -r node_modules mi-node/
-  - ls
+  - cp ./package.json ../repo
+  - cp ./yarn.lock ../repo
+  # - cd ../repo
   # - greenkeeper-lockfile-update
+  # - cd ../mi-node
 
 script:
-  - cd mi-node
   - pwd
-  - ls
+  - ls -al
   # - yarn test
   - yarn test:server
-  - cd ..
 
 # after_script:
 #   - greenkeeper-lockfile-upload
