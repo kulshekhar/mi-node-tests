@@ -11,6 +11,7 @@ before_install:
   - mv /tmp/repo ./
   - git clone https://github.com/kulshekhar/mi-node
   - mv mi-node/medapp ./
+  - mv mi-node/data ./
   - rm mi-node -rf
   # - yarn global add greenkeeper-lockfile@1
   - pwd
@@ -27,7 +28,7 @@ before_script:
 script:
   - pwd
   - ls -al
-  # - yarn test
+  - yarn test
   - yarn test:server
 
 # after_script:
