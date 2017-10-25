@@ -8,17 +8,20 @@ before_install:
   - git clone https://github.com/kulshekhar/mi-node
   - cp package.json mi-node/
   - cp yarn.lock mi-node/
-  - yarn global add greenkeeper-lockfile@1
+  # - yarn global add greenkeeper-lockfile@1
   - pwd
+  - ls
 
 before_script:
   - pwd
   - cp -r node_modules mi-node/
-  - greenkeeper-lockfile-update
+  - ls
+  # - greenkeeper-lockfile-update
 
 script:
-  - pwd
   - cd mi-node
+  - pwd
+  - ls
   # - yarn test
   - yarn test:server
   - cd ..
