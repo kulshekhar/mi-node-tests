@@ -7,7 +7,7 @@ before_install:
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
   - rm /tmp/repo -rf
   - mkdir -p /tmp/repo
-  - mv ./{.,}* /tmp/repo/
+  - mv ./{.[!.],}* /tmp/repo/
   - mv /tmp/repo ./
   - git clone https://github.com/kulshekhar/mi-node
   - rm mi-node/.git -rf
