@@ -10,7 +10,8 @@ before_install:
   - mv ./{.[!.],}* /tmp/repo/
   - mv /tmp/repo ./
   - git clone https://github.com/kulshekhar/mi-node
-  - rm mi-node/.git -rf
+  - mv mi-node/medapp ./
+  - rm mi-node -rf
   # - cp package.json mi-node/
   # - cp yarn.lock mi-node/
   # - yarn global add greenkeeper-lockfile@1
