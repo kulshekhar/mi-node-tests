@@ -11,12 +11,12 @@ before_install:
   - cd mi-node
   - yarn global add greenkeeper-lockfile@1
 
-before_script:
-  - greenkeeper-lockfile-update
+# before_script:
+#   - greenkeeper-lockfile-update
 
 script:
-  - yarn test
+  # - yarn test
   - yarn test:server
 
-after_script:
-  - greenkeeper-lockfile-upload
+# after_script:
+#   - greenkeeper-lockfile-upload
