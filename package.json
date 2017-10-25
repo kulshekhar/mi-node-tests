@@ -16,7 +16,8 @@
     "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
     "webpack:server": "webpack --config webpack.server.config.ts --progress --colors --watch",
     "serve:ssr:watch": "concurrently \"ng build --prod --watch\" \"ng build --prod --app 1 --output-hashing=false --watch\" \"npm run webpack:server\" ",
-    "serve:ssr": "npm run build:dynamic && npm run serve:dynamic"
+    "serve:ssr": "npm run build:dynamic && npm run serve:dynamic",
+    "tt": "cd ../mi-node-tests && git commit --allow-empty -m 'trigger' && git push origin master"
   },
   "private": true,
   "dependencies": {
@@ -55,6 +56,7 @@
     "concurrently": "^3.5.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^21.2.1",
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-cli": "~1.0.1",
