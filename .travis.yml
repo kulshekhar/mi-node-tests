@@ -13,7 +13,7 @@ before_install:
   - mv mi-node/medapp ./
   - mv mi-node/data ./
   - rm mi-node -rf
-  # - yarn global add greenkeeper-lockfile@1
+  - yarn global add greenkeeper-lockfile@1
   - pwd
   - ls -al
   - cd medapp
@@ -21,9 +21,9 @@ before_install:
 before_script:
   - cp ./package.json ../repo
   - cp ./yarn.lock ../repo
-  # - cd ../repo
-  # - greenkeeper-lockfile-update
-  # - cd ../medapp
+  - cd ../repo
+  - greenkeeper-lockfile-update
+  - cd ../medapp
 
 script:
   - pwd
@@ -31,5 +31,6 @@ script:
   # - yarn test
   - yarn test:server
 
-# after_script:
-#   - greenkeeper-lockfile-upload
+after_script:
+  - cd ../repo
+  - greenkeeper-lockfile-upload
