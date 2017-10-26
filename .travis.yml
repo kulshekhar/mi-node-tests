@@ -3,6 +3,9 @@ node_js:
   - "8"
   - "6"
 
+addons:
+  chrome: stable
+
 before_install:
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
   - rm /tmp/repo -rf
@@ -14,8 +17,6 @@ before_install:
   - mv mi-node/data ./
   - rm mi-node -rf
   - yarn global add greenkeeper-lockfile@1
-  # - pwd
-  # - ls -al
   - cd medapp
 
 before_script:
@@ -26,9 +27,7 @@ before_script:
   - cd ../medapp
 
 script:
-  # - pwd
-  # - ls -al
-  # - yarn test
+  - yarn test:ci
   - yarn test:server
 
 after_script:
