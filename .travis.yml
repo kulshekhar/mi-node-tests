@@ -25,7 +25,7 @@ before_script:
   - cp ./yarn.lock ../
   - cd ../
   - greenkeeper-lockfile-update
-  - cd ../medapp
+#  - cd ../medapp
 
 script:
   - yarn test:ci
