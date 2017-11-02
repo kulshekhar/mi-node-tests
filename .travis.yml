@@ -8,16 +8,12 @@ addons:
 
 before_install:
   - echo -e "machine github.com\n  login $CI_USER_TOKEN" >> ~/.netrc
-#  - rm /tmp/repo -rf
-#  - mkdir -p /tmp/repo
-#  - mv ./{.[!.],}* /tmp/repo/
-#  - mv /tmp/repo ./
   - git clone https://github.com/kulshekhar/mi-node
-  - rm ~/.netrc
   - mv mi-node/medapp ./
   - mv mi-node/data ./
   - rm mi-node -rf
   - yarn global add greenkeeper-lockfile@1
+  - sed -i -e 's/TRAVIS_COMMIT_RANGE/TRAVIS_COMMIT_RANGE__/g' ~/.config/yarn/global/node_modules/greenkeeper-lockfile/ci-services/travis.js
   - cd medapp
 
 before_script:
@@ -28,6 +24,7 @@ before_script:
   - cd medapp
 
 script:
+  # - ls
   - yarn test:ci
   - yarn test:server
 
