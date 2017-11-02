@@ -13,7 +13,7 @@ before_install:
 #  - mv ./{.[!.],}* /tmp/repo/
 #  - mv /tmp/repo ./
   - git clone https://github.com/kulshekhar/mi-node
-  - rm /~.netrc
+  - rm ~/.netrc
   - mv mi-node/medapp ./
   - mv mi-node/data ./
   - rm mi-node -rf
