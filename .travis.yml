@@ -25,6 +25,7 @@ before_script:
 
 script:
   # - ls
+  - yarn lint:all
   - yarn test:ci
   - yarn test:server
 
