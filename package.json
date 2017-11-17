@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start:hmr": "ng serve --hmr -e=hmr",
-    "start:server": "npm run build:all && npm run server",
+    "start:server": "npm run build:all:local && npm run server",
     "build": "ng build",
     "test": "ng test --browsers Chrome",
     "test:ci": "ng test --single-run --browsers ChromeHeadless",
@@ -27,9 +27,9 @@
     "tt": "cd ../mi-node-tests && git commit --allow-empty -m 'trigger' && git push origin master",
     "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer dist/browser/stats.json",
     "firebase:copy": "rm -rf firebase/functions/dist && cp -r dist firebase/functions/ && ts-node scripts/firebase.ts",
-    "firebase:deploy": "cd firebase/functions && ls -al && firebase deploy",
-    "firebase": "npm run build:all && npm run firebase:copy && npm run firebase:deploy",
-    "firebase:server": "npm run build:server && npm run firebase:copy && npm run firebase:deploy"
+    "firebase:deploy": "npm run firebase:copy && cd firebase/functions && ls -al && firebase deploy",
+    "firebase": "npm run build:all && npm run firebase:deploy",
+    "firebase:server": "npm run build:server && npm run firebase:deploy"
   },
   "private": true,
   "dependencies": {
