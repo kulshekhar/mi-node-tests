@@ -20,7 +20,7 @@ before_script:
   - cp ./package.json ../
   - cp ./yarn.lock ../
   - cd ../
-  - greenkeeper-lockfile-update
+# - greenkeeper-lockfile-update
   - cd medapp
 
 script:
@@ -31,4 +31,4 @@ script:
 
 after_script:
   - cd ../
-  - greenkeeper-lockfile-upload
+# - greenkeeper-lockfile-upload
