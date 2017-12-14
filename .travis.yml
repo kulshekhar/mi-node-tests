@@ -13,7 +13,7 @@ before_install:
   - mv mi-node/data ./
   - rm mi-node -rf
   - yarn global add greenkeeper-lockfile@1
-  - sed -i -e 's/TRAVIS_COMMIT_RANGE/TRAVIS_COMMIT_RANGE__/g' ~/.config/yarn/global/node_modules/greenkeeper-lockfile/ci-services/travis.js
+# - sed -i -e 's/TRAVIS_COMMIT_RANGE/TRAVIS_COMMIT_RANGE__/g' ~/.config/yarn/global/node_modules/greenkeeper-lockfile/ci-services/travis.js
   - cd medapp
 
 before_script:
