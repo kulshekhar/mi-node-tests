@@ -1,4 +1,5 @@
 language: node_js
+sudo: required
 node_js:
   - "8"
   - "6"
@@ -17,6 +18,9 @@ before_install:
   - cd medapp
 
 before_script:
+  - which google-chrome
+  - sudo chown root:$USER /opt/google/chrome/chrome-sandbox
+  - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
   - cp ./package.json ../
   - cp ./yarn.lock ../
   - cd ../
